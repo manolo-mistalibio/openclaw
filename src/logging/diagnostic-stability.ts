@@ -249,6 +249,7 @@ function sanitizeDiagnosticEvent(event: DiagnosticEventPayload): DiagnosticStabi
     case "gateway.event_loop.sample":
     case "diagnostic.gc":
     case "diagnostic.child_process.spawn":
+    case "worker.request":
     case "log.record":
     case "telemetry.exporter":
       // These events use separate exporters and are excluded by the subscription.
@@ -734,6 +735,7 @@ export function startDiagnosticStabilityRecorder(): void {
         "gateway.event_loop.sample",
         "diagnostic.gc",
         "diagnostic.child_process.spawn",
+        "worker.request",
       ],
     },
   );
